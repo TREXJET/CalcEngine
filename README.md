@@ -60,3 +60,42 @@ All engine output goes to stdout and is also returned by the engine API.
     If the divider encounters a 0, it will report this and return a max long long int as a representation
     of infinity. 
 
+.
+├── build
+│   ├── input_data_2.txt
+│   ├── input_data_3.txt
+│   ├── input_data.txt
+│   ├── t1.txt
+│   ├── t2.txt
+│   ├── test_bad_data.txt
+│   ├── test_data2.txt
+│   ├── test_data.txt
+│   └── test_multiply_by_0.txt
+├── Calc.cpp
+├── Calc.h
+├── Calculator
+│   ├── Calc.cpp
+│   ├── Calc.h
+│   └── Makefile
+├── Engine
+│   ├── Divider.cpp
+│   ├── Divider.h
+│   ├── Engine.cpp
+│   ├── EngineFactory.cpp
+│   ├── EngineFactory.h
+│   ├── Engine.h
+│   ├── libEngine.so
+│   ├── Makefile
+│   ├── Multiplier.cpp
+│   └── Multiplier.h
+├── env.vim
+├── Makefile
+├── Programming_exercise_cpp.doc.pdf
+├── README.md
+└── Test
+    ├── Makefile
+    ├── TestEngine.cpp
+    └── TestEngine.h
+
+4 directories, 31 files
+
