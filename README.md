@@ -8,7 +8,7 @@
     * From the top level: 'make'
     * 'cd build''
     * You will see two new files here: 'calc' and 'libEngine.so'
-    * You can run the example calc program here. There are already some example input files in the build directory.
+    * You can run the example calc program here. There are already some example input files in 'build'
 
 
 ## Building and running unit tests
