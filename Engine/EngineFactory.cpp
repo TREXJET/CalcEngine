@@ -6,7 +6,7 @@ std::shared_ptr<Engine> EngineFactory::Create(
         std::string engine_type,
         std::string engine_name, 
         int numInputs, 
-        char ** inputList, 
+        const char ** inputList, 
         AvailableInput inputTypes )       
 {
 

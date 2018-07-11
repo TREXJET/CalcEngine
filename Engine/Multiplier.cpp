@@ -10,7 +10,7 @@
 Multiplier::Ptr Multiplier::Create(
         std::string engine_name, 
         int numInputs, 
-        char ** inputList, 
+        const char ** inputList,
         AvailableInput inputTypes )
 {
     std::shared_ptr<Multiplier> pMultiplier = std::shared_ptr<Multiplier>( new Multiplier(
@@ -24,14 +24,13 @@ Multiplier::Ptr Multiplier::Create(
 Multiplier::Multiplier( 
         std::string engine_name, 
         int numInputs, 
-        char ** inputList, 
+        const char ** inputList, 
         AvailableInput inputTypes )
 {
     m_name = engine_name;
     m_numInputs = numInputs;
     m_inputList = inputList;
     // input argument types for multpilier are restricted to FILE_LIST, per the spec
-    // TODO make sure the factory reminds user of this when they create multi
     m_inputTypes = FILE_LIST;
     m_currTotal = 0;
 }
@@ -41,6 +40,12 @@ Multiplier::Multiplier(
 long long int Multiplier::Calculate()
 {
     std::cout << "Multiplier starting calculation." << std::endl;
+
+    if( m_allInts.size() < 1 )
+    {
+        std::cout << "No data, nothing to calculate." << std::endl;
+        return 0;
+    }
 
     m_currTotal = m_allInts[0];
 

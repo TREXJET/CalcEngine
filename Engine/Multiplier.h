@@ -13,7 +13,7 @@ class Multiplier : public Engine, public std::enable_shared_from_this<Multiplier
         static Multiplier::Ptr Create(
                 std::string engine_name, 
                 int numInputs, 
-                char ** inputList, 
+                const char ** inputList, 
                 AvailableInput inputTypes );
 
         long long int Calculate( );
@@ -22,7 +22,7 @@ class Multiplier : public Engine, public std::enable_shared_from_this<Multiplier
         Multiplier( 
                 std::string engine_name, 
                 int numInputs, 
-                char ** inputList, 
+                const char ** inputList, 
                 AvailableInput inputTypes );
         long long int m_currTotal;
 

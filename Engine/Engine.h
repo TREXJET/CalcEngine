@@ -20,7 +20,7 @@ class Engine
         Engine( 
                 std::string engine_name, 
                 int numInputs, 
-                char ** inputList, 
+                const char ** inputList, 
                 AvailableInput inputTypes );
         ~Engine();
 
@@ -36,7 +36,7 @@ class Engine
         Engine();
         std::string m_name;
         int m_numInputs;
-        char **m_inputList;
+        const char **m_inputList;
         AvailableInput m_inputTypes;
 
         int ReadFilesIntoVector();

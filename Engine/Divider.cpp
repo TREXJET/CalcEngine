@@ -11,7 +11,7 @@
 Divider::Ptr Divider::Create(
         std::string engine_name, 
         int numInputs, 
-        char ** inputList, 
+        const char ** inputList, 
         AvailableInput inputTypes )
 {
     std::shared_ptr<Divider> pDivider = std::shared_ptr<Divider>( new Divider(
@@ -26,7 +26,7 @@ Divider::Ptr Divider::Create(
 Divider::Divider( 
         std::string engine_name, 
         int numInputs, 
-        char ** inputList, 
+        const char ** inputList, 
         AvailableInput inputTypes )
 {
     m_name = engine_name;
@@ -42,6 +42,11 @@ long long int Divider::Calculate()
 {
     std::cout << "Divider starting calculation." << std::endl;
 
+    if( m_allInts.size() < 1 )
+    {
+        std::cout << "No data, nothing to calculate." << std::endl;
+        return 0;
+    }
     m_currTotal = m_allInts[0];
 
     for( long long unsigned int index = 0; index < m_allInts.size()-1; index++ )
@@ -53,7 +58,7 @@ long long int Divider::Calculate()
             std::cout << "Divide by 0 attempted. Exiting calculation." << std::endl;
             // If x/0 = infinity. 
             std::cout << "Divider Result: INF" << std::endl;
-            m_currTotal = std::numeric_limits<float>::max();
+            m_currTotal = std::numeric_limits<long long int>::max();
             return m_currTotal;
         }
 

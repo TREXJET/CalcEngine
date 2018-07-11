@@ -13,7 +13,7 @@ class Divider : public Engine, public std::enable_shared_from_this<Divider>
         static Divider::Ptr Create(
                 std::string engine_name, 
                 int numInputs, 
-                char ** inputList, 
+                const char ** inputList, 
                 AvailableInput inputTypes );
 
         long long int Calculate( );
@@ -21,7 +21,7 @@ class Divider : public Engine, public std::enable_shared_from_this<Divider>
         Divider( 
                 std::string engine_name, 
                 int numInputs, 
-                char ** inputList, 
+                const char ** inputList, 
                 AvailableInput inputTypes );
         long long int m_currTotal;
 

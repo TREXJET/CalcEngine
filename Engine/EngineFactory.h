@@ -12,7 +12,7 @@ class EngineFactory
                 std::string engine_type,
                 std::string engine_name, 
                 int numInputs, 
-                char ** inputList, 
+                const char ** inputList, 
                 AvailableInput inputTypes );
 };
 
