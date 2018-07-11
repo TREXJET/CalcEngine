@@ -1,3 +1,5 @@
+// EngineFactory.h
+// Author: Salik Siddiqui, July 2018
 #ifndef ENGINE_FACTORY_H
 #define ENGINE_FACTORY_H
 

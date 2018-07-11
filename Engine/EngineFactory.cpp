@@ -1,7 +1,10 @@
-
+// EngineFactory.cpp
+// Author: Salik Siddiqui, July 2018
 #include <iostream>
 #include "EngineFactory.h"
 
+// The engine factory simply returns a pointer to the type of engine 
+// based on the engine type selected on the command line.
 std::shared_ptr<Engine> EngineFactory::Create(
         std::string engine_type,
         std::string engine_name, 

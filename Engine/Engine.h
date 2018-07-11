@@ -13,6 +13,7 @@ enum AvailableInput
     FILE_LIST  = 1,
 };
 
+// Base class that defines Engines
 class Engine
 {
     public:
@@ -25,9 +26,8 @@ class Engine
         ~Engine();
 
         std::string get_name();
-        int get_numInputs();
 
-        // The default calculate type simply prints numInputs
+        // To be defined by derived classes
         virtual long long int Calculate() = 0;
         int ReadData();
 
@@ -41,6 +41,10 @@ class Engine
 
         int ReadFilesIntoVector();
         int ReadArgsIntoVector();
+
+        // all numbers loaded into this vector.
+        // calculations will be run on the numbers
+        // stored here.
         std::vector<long long int> m_allInts;
 };
 

@@ -6,6 +6,7 @@
 
 #include "Engine.h"
 
+// Derives from base class Engine.
 class Divider : public Engine, public std::enable_shared_from_this<Divider>
 {
     public:

@@ -12,6 +12,7 @@ void TestDividerArgList();
 void TestDividerFileList();
 void TestMultiplierFileList();
 void TestBadData();
+void TestBadDataArgs();
 void TestDivideBy0();
 void TestMultiplyBy0();
 void TestTinyFileName();

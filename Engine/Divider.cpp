@@ -32,12 +32,17 @@ Divider::Divider(
     m_name = engine_name;
     m_numInputs = numInputs;
     m_inputList = inputList;
-    // input argument types for multpilier are restricted to FILE_LIST, per the spec
-    // TODO make sure the factory reminds user of this when they create multi
     m_inputTypes = inputTypes;
     m_currTotal = 0;
 }
 
+// This calculate function performs sequential division on each number it received
+// as input. 
+//      
+// Will return max size of long long int if a divide by 0 is attempted as the best
+// way to represent INF. 
+// Otherwise, prints and returns the result of dividing each number through the
+// input data.
 long long int Divider::Calculate()
 {
     std::cout << "Divider starting calculation." << std::endl;

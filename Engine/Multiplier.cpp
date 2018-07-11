@@ -36,7 +36,11 @@ Multiplier::Multiplier(
 }
 
 
-
+// Calculation for multiplier will sequentially multiply all of the numbers 
+// read in from the input file. 
+//
+// If the multiplier ever multiplies by 0, it will return a 0 immediately.
+//
 long long int Multiplier::Calculate()
 {
     std::cout << "Multiplier starting calculation." << std::endl;

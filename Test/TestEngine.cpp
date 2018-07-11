@@ -1,4 +1,5 @@
 // TestEngine.cpp
+// Tests for calculation Engine library
 // Author: Salik Siddiqui, July 2018
 
 #include <iostream>
@@ -16,13 +17,14 @@ int main( const int argc, const char ** argv )
     TestDividerFileList();
     TestMultiplierFileList();
     TestBadData();
+    TestBadDataArgs();
     TestDivideBy0();
     TestMultiplyBy0();
     TestTinyFileName();
     TestMultiplierReadArgsList();
 }
 
-// Testing to make sure divider runs and returns the correct output
+// Test normal operation of divider with command line input
 void TestDividerArgList()
 {
     std::cout << "=========================" << std::endl;
@@ -38,13 +40,15 @@ void TestDividerArgList()
     assert(myEngine->Calculate() == 5); 
 }
 
+// Test normal operation of divider with file input 
+// Also implicitly tests appending of .txt to files that don't already have them
 void TestDividerFileList()
 {
     std::cout << "=========================" << std::endl;
     std::cout << "TestDividerFileList" << std::endl;
     std::cout << "=========================" << std::endl;
     const int numInputs = 4;
-    const char* inputList[] = { "./calc", "div", "test_data", "test_data2" };
+    const char* inputList[] = { "./calc", "div", "test_data", "test_data2.txt" };
 
     EngineFactory eFactory;
     Engine::Ptr myEngine = eFactory.Create( "div", "calc engine", numInputs, inputList, FILE_LIST );
@@ -53,6 +57,7 @@ void TestDividerFileList()
     assert(myEngine->Calculate() == 2); 
 }
 
+// Test normal operation of multiplier with file input
 void TestMultiplierFileList()
 {
     std::cout << "=========================" << std::endl;
@@ -68,6 +73,8 @@ void TestMultiplierFileList()
     assert(myEngine->Calculate() == 200); 
 }
 
+// Test to ensure error from engine which recieves non integer, 
+// non csv data (see test_bad_data.txt)
 void TestBadData()
 {
     std::cout << "=========================" << std::endl;
@@ -82,6 +89,21 @@ void TestBadData()
     assert( myEngine->ReadData() == -1 );
 }
 
+// Test to ensure error from engine which recieves bad data on the command line
+void TestBadDataArgs()
+{
+    std::cout << "=========================" << std::endl;
+    std::cout << "TestBadDataArgs" << std::endl;
+    std::cout << "=========================" << std::endl;
+    const int numInputs = 3;
+    const char* inputList[] = { "./calc", "multi", "bad", "data", "1.2" };
+
+    EngineFactory eFactory;
+    Engine::Ptr myEngine = eFactory.Create( "div", "calc engine", numInputs, inputList, ARG_LIST );
+
+    assert( myEngine->ReadData() == -1 );
+}
+// Test to ensure correct behavior of divider engine when it is about to divide by 0
 void TestDivideBy0()
 {
     std::cout << "=========================" << std::endl;
@@ -97,6 +119,7 @@ void TestDivideBy0()
     assert(myEngine->Calculate() == std::numeric_limits<long long int>::max() ); 
 }
 
+// Test to ensure correct behavior of multiplier engine when it encounters a 0
 void TestMultiplyBy0()
 {
     std::cout << "=========================" << std::endl;
@@ -112,6 +135,8 @@ void TestMultiplyBy0()
     assert(myEngine->Calculate() == 0 ); 
 }
 
+// Test to ensure file arguments with names of length shorter than ".txt" don't
+// cause a crash.
 void TestTinyFileName()
 {
     std::cout << "=========================" << std::endl;
@@ -127,7 +152,9 @@ void TestTinyFileName()
     assert(myEngine->Calculate() == 600 ); 
 }
 
-// Expected to fail, since the multiplier should only be able to read files per the spec.
+// Test to make sure Multiplier engine reports and will not work with argument
+// inputs from the command line. Per the spec it's only supposed to work with
+// Files as its arguments
 void TestMultiplierReadArgsList()
 {
     std::cout << "=========================" << std::endl;
