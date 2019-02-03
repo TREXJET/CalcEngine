@@ -19,5 +19,5 @@ clean:
 	$(MAKE) -C Engine clean
 	$(MAKE) -C Calculator clean
 	$(MAKE) -C Test clean
-	$(RM) -r build
+	$(RM) -r build/calc
 
