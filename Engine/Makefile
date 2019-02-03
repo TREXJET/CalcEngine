@@ -6,7 +6,7 @@ SRC_FILES = Engine.cpp Engine.h Multiplier.cpp Multiplier.h Divider.cpp Divider.
 .PHONY: lib$(LIB_NAME).so clean
 
 lib$(LIB_NAME).so: $(SRC_FILES)
-	 g++ $^ -g3 -fPIC -shared -Wl,-soname,./lib$(LIB_NAME).so -o $@
+	 g++-8 $^ -g3 -fPIC -shared -Wl,-soname,./lib$(LIB_NAME).so -o $@
 	 ln -sf ../Engine/lib$(LIB_NAME).so ../build/lib$(LIB_NAME).so 
 
 clean:

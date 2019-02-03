@@ -25,4 +25,5 @@ std::shared_ptr<Engine> EngineFactory::Create(
         return Divider::Create("divider_engine", numInputs, inputList, inputTypes);
 
     }
+    return nullptr;
 }

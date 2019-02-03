@@ -1,6 +1,6 @@
 # Top level Calculation engine makefile
 
-CXX=g++
+CXX=g++-8
 CXXFLAGS=-std=c++11 -Wall -g 
 
 MKDIR_P = mkdir -p

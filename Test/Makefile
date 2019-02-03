@@ -1,6 +1,6 @@
 # Makefile for Tests
 
-CXX=g++
+CXX=g++-8
 CXXFLAGS=-std=c++11 -Wall -g 
 
 INC_PATH=-I.. -I ../Engine/ 
