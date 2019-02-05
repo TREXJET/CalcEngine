@@ -5,14 +5,15 @@
     ./calc <engine_name> <list of integers>
 
 ## Building the calculation engine and example calc program
+    * From the top level: `cmake CMakeLists.txt`
     * From the top level: 'make'
     * 'cd build''
-    * You will see two new files here: 'calc' and 'libEngine.so'
+    * You will see three new files here: 'calc', 'libEngine.so', and `TestEngine`
     * You can run the example calc program here. There are already some example input files in 'build'
 
 
-## Building and running unit tests
-    * From the top level: 'make test'
+## Running unit tests
+    * After doing a build following the steps above:
     * 'cd build'
     * './TestEngine'
 
@@ -73,31 +74,33 @@ All engine output goes to stdout and is also returned by the engine API.
 │   ├── test_data2.txt
 │   ├── test_data.txt
 │   └── test_multiply_by_0.txt
-├── Calc.cpp
-├── Calc.h
 ├── Calculator
 │   ├── Calc.cpp
 │   ├── Calc.h
-│   └── Makefile
+│   └── mk.old
+├── CMakeLists.txt
 ├── Engine
+│   ├── CMakeLists.txt
 │   ├── Divider.cpp
 │   ├── Divider.h
 │   ├── Engine.cpp
 │   ├── EngineFactory.cpp
 │   ├── EngineFactory.h
 │   ├── Engine.h
-│   ├── libEngine.so
-│   ├── Makefile
+│   ├── lib.cmake
+│   ├── mk.old
 │   ├── Multiplier.cpp
 │   └── Multiplier.h
 ├── env.vim
-├── Makefile
+├── exe.cmake
+├── mk.old
 ├── Programming_exercise_cpp.doc.pdf
 ├── README.md
 └── Test
-    ├── Makefile
+    ├── CMakeLists.txt
+    ├── exe.cmake
     ├── TestEngine.cpp
     └── TestEngine.h
 
-4 directories, 31 files
+4 directories, 33 files
 ```
