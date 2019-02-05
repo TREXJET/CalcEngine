@@ -14,11 +14,8 @@ SET( LIB_SRCS
 ADD_LIBRARY(${LIB_NAME} SHARED
 ${LIB_SRCS}
 )
-# TODO should be able to remove below
-#SET( CMAKE_BUILD_DIR
-#    ${CMAKE_BINARY_DIR}/build/
-#)
-message("cmake binary dir:" ${CMAKE_BINARY_DIR})
+
+#message("cmake binary dir:" ${CMAKE_BINARY_DIR})
 INSTALL(TARGETS ${LIB_NAME} DESTINATION ${CMAKE_LIBRARY_OUTPUT_DIRECTORY})
 
 #EOF
