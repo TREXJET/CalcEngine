@@ -91,7 +91,6 @@ All engine output goes to stdout and is also returned by the engine API.
 │   ├── mk.old
 │   ├── Multiplier.cpp
 │   └── Multiplier.h
-├── env.vim
 ├── exe.cmake
 ├── mk.old
 ├── Programming_exercise_cpp.doc.pdf
@@ -102,5 +101,5 @@ All engine output goes to stdout and is also returned by the engine API.
     ├── TestEngine.cpp
     └── TestEngine.h
 
-4 directories, 33 files
+4 directories, 32 files
 ```
