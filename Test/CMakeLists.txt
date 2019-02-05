@@ -1,0 +1,7 @@
+INCLUDE_DIRECTORIES(
+        ${ENGINE_INCLUDES}
+)
+
+INCLUDE( ./exe.cmake)
+
+#EOF
