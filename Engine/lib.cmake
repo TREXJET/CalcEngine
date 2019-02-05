@@ -1,9 +1,6 @@
 SET( LIB_NAME EngineLib )
-set(CMAKE_C_COMPILER /usr/bin/gcc)
-set(CMAKE_CXX_COMPILER /usr/bin/g++-8)
 
-
-# add library source files here
+# library source files 
 SET( LIB_SRCS
     Engine.cpp
     Divider.cpp
@@ -15,7 +12,6 @@ ADD_LIBRARY(${LIB_NAME} SHARED
 ${LIB_SRCS}
 )
 
-#message("cmake binary dir:" ${CMAKE_BINARY_DIR})
 INSTALL(TARGETS ${LIB_NAME} DESTINATION ${CMAKE_LIBRARY_OUTPUT_DIRECTORY})
 
 #EOF

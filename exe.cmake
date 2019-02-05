@@ -18,10 +18,7 @@ INCLUDE_DIRECTORIES(
 
 TARGET_LINK_LIBRARIES(
         ${CALC_EXE} 
-        # TODO set this binary location in the top level cmake
-        # so the output binary path can be shared between Engine and Calc 
         EngineLib
-#        ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/libEngineLib.so
 )
 
 INSTALL(TARGETS calc
