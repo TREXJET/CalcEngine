@@ -1,4 +1,5 @@
 # Calculation Engine
+This is an old programming challenge I was asked to do when interviewing with a company. They said they were okay with me publishing it on github. 
 
 ## Usage:
     ./calc <engine_name> <file_list>
